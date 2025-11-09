@@ -1,0 +1,38 @@
+{
+  "name": "linkedin-recruiter",
+  "version": "1.0.0",
+  "description": "LinkedIn Recruiter shame app",
+  "main": "main.js",
+  "author": "you",
+  "license": "MIT",
+  "scripts": {
+  "start": "electron .",
+  "predist": "npx electron-builder install-app-deps",
+  "dist": "electron-builder"
+},
+"build": {
+  "appId": "com.yourname.lnrecruiter",
+  "productName": "LinkedIn Recruiter",
+  "files": [
+    "**/*",
+    "!node_modules/.cache/**"
+  ],
+  "asarUnpack": [
+    "node_modules/active-win/**"
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "tray_icon.png"
+  },
+    "directories": {
+      "buildResources": "assets" 
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "dependencies": {
+    "active-win": "^8.1.1"
+  }
+}
